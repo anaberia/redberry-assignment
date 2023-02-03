@@ -1,0 +1,37 @@
+.App {
+  width: 1920px;
+  height: 1080px;
+  background: url("../public//images/home.png");
+}
+
+.App-header {
+  height: 90px;
+  width: 1780px;
+  margin: 0 auto;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.App-logo1 {
+  width: 236px;
+  margin-top: 25px;
+  display: inline-block;
+}
+
+.App-logo2 {
+  position: absolute;
+  margin-top: 473px;
+  margin-left: 1076px;
+  width: 299px;
+}
+
+.App-addBtn {
+  position: absolute;
+  width: 464px;
+  height: 60px;
+  margin-top: 513px;
+  margin-left: 728px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background: #1a1a1a;
+}
