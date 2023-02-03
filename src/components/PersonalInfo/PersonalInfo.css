@@ -1,0 +1,15 @@
+.PersonalInfo {
+  display: flex;
+}
+
+.PersonalInfo-left {
+  border: 2px solid green;
+  height: 1080px;
+  width: 1098px;
+}
+
+.PersonalInfo-right {
+  border: 2px solid blue;
+  height: 1080px;
+  width: 822px;
+}
