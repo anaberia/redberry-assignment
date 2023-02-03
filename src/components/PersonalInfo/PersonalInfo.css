@@ -3,13 +3,55 @@
 }
 
 .PersonalInfo-left {
-  border: 2px solid green;
   height: 1080px;
   width: 1098px;
+  display: flex;
+  background: #f9f9f9;
 }
 
 .PersonalInfo-right {
-  border: 2px solid blue;
   height: 1080px;
   width: 822px;
+}
+
+.PersonalInfo-header {
+  display: flex;
+  justify-content: space-between;
+  height: 88px;
+  width: 798px;
+  margin-left: 62px;
+  margin-right: 150px;
+  border-bottom: 1px solid #474747;
+}
+
+.PersonalInfo-backBtn {
+  color: #2e2e2e;
+  background: #ffffff;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 28px;
+  margin-left: 48px;
+  margin-top: 45px;
+}
+
+.vector {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.Header-txt {
+  font-family: Helvetica Neue;
+  margin-top: 47px;
+  color: #1a1a1a;
+  font-size: 24px;
+
+  font-weight: bold;
+}
+
+.Header-pg {
+  margin-top: 47px;
+  color: #1a1a1a;
+  font-size: 20px;
 }
