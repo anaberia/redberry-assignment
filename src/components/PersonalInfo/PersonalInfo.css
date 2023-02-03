@@ -6,15 +6,22 @@
   height: 1080px;
   width: 1098px;
   display: flex;
+  flex-direction: column;
   background: #f9f9f9;
+  border: 2px solid red;
 }
-
+.PersonalInfo-headerContainer {
+  border: 2px solid red;
+  height: 150px;
+  display: flex;
+}
 .PersonalInfo-right {
   height: 1080px;
   width: 822px;
 }
 
 .PersonalInfo-header {
+  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   height: 88px;
@@ -55,3 +62,61 @@
   color: #1a1a1a;
   font-size: 20px;
 }
+
+.Input-container {
+  border: 2px solid red;
+  height: 200px;
+}
+
+.Name-lastName {
+  display: flex;
+  width: 798px;
+  margin-left: 150px;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+
+.Name {
+  height: 35px;
+  width: 350px;
+}
+
+.LastName {
+  height: 35px;
+  width: 350px;
+}
+
+.Input-containerHeader {
+  width: 798px;
+  display: flex;
+  margin-left: 150px;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+
+.NameInput {
+  height: 35px;
+  width: 350px;
+  background: #ffffff;
+}
+
+.LastNameInput {
+  height: 35px;
+  width: 350px;
+  background: #ffffff;
+}
+
+/* .InputComment {
+  display: flex;
+  width: 798px;
+  margin-left: 150px;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+.Comment1 {
+  width: 350px;
+}
+
+.Comment2 {
+  width: 350px;
+} */
