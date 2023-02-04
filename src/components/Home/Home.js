@@ -13,9 +13,8 @@ function Home() {
       <div className="App-logo2">
         <img src="./images/logo2.png" alt="logo2" />
       </div>
-
       <Link to="/PersonalInfo">
-        <button className="App-addBtn"> რეზიუმეს დამატება</button>
+        <button className="App-addBtn">ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ</button>
       </Link>
     </div>
   );

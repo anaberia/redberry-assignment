@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./PersonalInfo.css";
+import "../../global-styles/global-styles.css";
 
 function PersonalInfo() {
   return (
@@ -14,7 +15,7 @@ function PersonalInfo() {
             </div>
           </Link>
           <div className="PersonalInfo-header">
-            <div className="Header-txt">პირადი ინფო</div>
+            <div className="Header-txt">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</div>
             <div className="Header-pg">1/3</div>
           </div>
         </div>
@@ -73,6 +74,9 @@ function PersonalInfo() {
           </div>
         </div>
         {/* phone */}
+        {/* button */}
+        <button className="Next-btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
+        {/* button */}
       </div>
       <div className="PersonalInfo-right">Right side</div>
     </div>
