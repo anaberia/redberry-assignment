@@ -27,7 +27,6 @@
   width: 798px;
   margin-left: 62px;
   margin-right: 150px;
-
   border-bottom: 1px solid #474747;
 }
 
@@ -45,7 +44,7 @@
 
 .vector {
   margin-left: 10px;
-  padding-top: 5px;
+  padding-top: 2px;
   cursor: pointer;
 }
 
@@ -80,6 +79,7 @@
   font-weight: 700;
   font-size: 16px;
   display: flex;
+  color: #1a1a1a;
   align-items: center;
 }
 
@@ -91,11 +91,6 @@
   display: flex;
   align-items: center;
   color: #2e2e2e;
-}
-
-.LastName-container {
-  width: 419px;
-  height: 122px;
 }
 
 .NameInput {
@@ -120,6 +115,7 @@
   font-weight: 500;
   font-size: 18px;
   font-weight: 700;
+  color: #1a1a1a;
 }
 
 .Photo-upload {
@@ -139,6 +135,7 @@
 }
 
 .AboutMe-title {
+  color: #1a1a1a;
   width: 798px;
   margin-left: 150px;
   font-weight: 500;
@@ -165,6 +162,7 @@
 }
 
 .Email-title {
+  color: #1a1a1a;
   font-weight: 700;
   width: 798px;
   margin-left: 150px;
@@ -185,41 +183,22 @@
 }
 
 .Email-valid {
-  width: 350px;
+  width: 700px;
   margin-left: 150px;
   font-size: 14px;
   padding-top: 8px;
   color: #2e2e2e;
 }
-
-.Mobile-container {
-  margin-top: 29px;
-}
-
-.Mobile-title {
-  font-weight: 700;
-  width: 798px;
-  margin-left: 150px;
+.Next-btn {
   font-size: 16px;
-  padding-bottom: 8px;
-}
-
-.Mobile-input {
-  width: 766px;
-  background: #ffffff;
-  margin-left: 150px;
-  padding-inline: 16px;
-  padding-top: 13px;
-  padding-bottom: 14px;
-  font-size: 16px;
+  font-weight: 500;
+  width: 151px;
+  padding-block: 14px;
   border-radius: 4px;
-  border: 1px solid #bcbcbc;
-}
-
-.Mobile-valid {
-  width: 798px;
-  margin-left: 150px;
-  font-size: 14px;
-  padding-top: 8px;
-  color: #2e2e2e;
+  border: none;
+  background: #6b40e3;
+  margin-left: 797px;
+  margin-top: 160px;
+  color: #ffffff;
+  cursor: pointer;
 }

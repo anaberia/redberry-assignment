@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./PersonalInfo.css";
-import "../../global-styles/global-styles.css";
 
 function PersonalInfo() {
   return (
@@ -21,6 +20,7 @@ function PersonalInfo() {
         </div>
         {/* header */}
         {/* input */}
+
         <div className="Input-container">
           <div className="Name-container">
             <div className="Name">სახელი</div>
@@ -33,6 +33,7 @@ function PersonalInfo() {
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
         </div>
+
         {/* input */}
         {/* photo */}
         <div className="Photo-container">
@@ -62,20 +63,22 @@ function PersonalInfo() {
         </div>
         {/* email */}
         {/* phone */}
-        <div className="Mobile-container">
-          <div className="Mobile-title">მობილურის ნომერი</div>
+        <div className="Email-container">
+          <div className="Email-title">მობილურის ნომერი</div>
           <input
             type="text"
-            className="Mobile-input"
+            className="Email-input"
             placeholder="+995 551 12 34 56"
           />
-          <div className="Mobile-valid">
+          <div className="Email-valid">
             უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს
           </div>
         </div>
         {/* phone */}
         {/* button */}
-        <button className="Next-btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
+        <Link to="/ExperienceInfo">
+          <button className="Next-btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
+        </Link>
         {/* button */}
       </div>
       <div className="PersonalInfo-right">Right side</div>

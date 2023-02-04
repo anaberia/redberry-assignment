@@ -1,0 +1,66 @@
+.ExperienceInfo {
+  display: flex;
+}
+
+.ExperienceInfo-left {
+  height: 1080px;
+  width: 1098px;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+
+.ExperienceInfo-right {
+  height: 1080px;
+  width: 822px;
+}
+
+.Input-containerWrapper {
+  margin-top: 30px;
+}
+
+.Experience-btn {
+  margin-top: 90px;
+  margin-left: 150px;
+  width: 289px;
+  height: 48px;
+  background: #62a1eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.Experience-btnGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 150px;
+  margin-top: 115px;
+  width: 797px;
+}
+
+.Experience-nextBtn {
+  font-size: 16px;
+  font-weight: 500;
+  width: 151px;
+  padding-block: 14px;
+  padding-inline: 35px;
+  border-radius: 4px;
+  border: none;
+  background: #6b40e3;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.Experience-backBtn {
+  font-size: 16px;
+  font-weight: 500;
+  width: 151px;
+  padding-block: 14px;
+  padding-inline: 35px;
+  border-radius: 4px;
+  border: none;
+  background: #6b40e3;
+  color: #ffffff;
+  cursor: pointer;
+}
