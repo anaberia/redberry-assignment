@@ -1,7 +1,7 @@
-/* .App {
+.App {
   width: 1920px;
   height: 1080px;
-  background: url("../public//images/home.png");
+  background: url("../../../public/images/home.png");
 }
 
 .App-header {
@@ -35,4 +35,4 @@
   color: white;
   background: #1a1a1a;
   cursor: pointer;
-} */
+}
