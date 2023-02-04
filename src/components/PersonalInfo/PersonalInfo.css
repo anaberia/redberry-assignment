@@ -87,6 +87,7 @@
   font-size: 14px;
   display: flex;
   align-items: center;
+  color: #2e2e2e;
 }
 
 .LastName-container {
@@ -156,8 +157,35 @@
 }
 
 .Email-container {
-  border: 2px solid red;
   margin-top: 33px;
+}
+
+.Email-title {
+  width: 798px;
+  margin-left: 150px;
+  font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+
+.Email-input {
+  width: 766px;
+  background: #ffffff;
+  margin-left: 150px;
+  padding-inline: 16px;
+  padding-top: 13px;
+  padding-bottom: 14px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #bcbcbc;
+}
+
+.Email-valid {
+  width: 350px;
+  margin-left: 150px;
+  font-size: 14px;
+  padding-top: 8px;
+  color: #2e2e2e;
 }
 
 .Mobile-container {

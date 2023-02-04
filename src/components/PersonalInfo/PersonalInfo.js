@@ -38,7 +38,7 @@ function PersonalInfo() {
         {/* photo */}
         {/* about me */}
         <div className="AboutMe-container">
-          <div className="AboutMe-title">ჩემ შესახებ(არასავალდებულო)</div>
+          <div className="AboutMe-title">ჩემ შესახებ (არასავალდებულო)</div>
           <textarea
             type="text"
             className="AboutMe-input"
