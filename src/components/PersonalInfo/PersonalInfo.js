@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./PersonalInfo.css";
 
 function PersonalInfo() {
@@ -7,9 +8,11 @@ function PersonalInfo() {
       <div className="PersonalInfo-left">
         {/* header */}
         <div className="PersonalInfo-headerContainer">
-          <div className="PersonalInfo-backBtn">
-            <div className="vector">{"<"}</div>
-          </div>
+          <Link style={{ textDecoration: "none" }} to="/">
+            <div className="PersonalInfo-backBtn">
+              <div className="vector">{"<"}</div>
+            </div>
+          </Link>
           <div className="PersonalInfo-header">
             <div className="Header-txt">პირადი ინფო</div>
             <div className="Header-pg">1/3</div>
