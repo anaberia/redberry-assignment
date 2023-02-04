@@ -19,26 +19,18 @@ function PersonalInfo() {
 
         {/* input */}
         <div className="Input-container">
-          <div className="Name-lastName">
+          <div className="Name-container">
             <div className="Name">სახელი</div>
-            <div className="LastName">გვარი</div>
-          </div>
-          <div className="Input-containerHeader">
             <input type="text" className="NameInput" placeholder="ანზორ" />
-            <input
-              type="text"
-              className="LastNameInput"
-              placeholder="მუმლაძე"
-            />
+            <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
-          <div className="Name-lastName ">
-            <div className="Name">მინიმუმ 2 ასო, ქართული ასოები</div>
-            <div className="LastName">მინიმუმ 2 ასო, ქართული ასოები</div>
+          <div className="LastName-container">
+            <div className="Name">გვარი</div>
+            <input type="text" className="NameInput" placeholder="მუმლაძე" />
+            <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
         </div>
       </div>
-      {/* input */}
-
       <div className="PersonalInfo-right">Right side</div>
     </div>
   );
