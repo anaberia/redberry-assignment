@@ -16,7 +16,6 @@ function PersonalInfo() {
           </div>
         </div>
         {/* header */}
-
         {/* input */}
         <div className="Input-container">
           <div className="Name-container">
@@ -30,6 +29,14 @@ function PersonalInfo() {
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
         </div>
+        {/* input */}
+        {/* photo */}
+        <div className="Photo-container">
+          <div className="Personal-photoUp">პირადი ფოტოს ატვირთვა</div>
+          <button className="Photo-upload">ატვირთვა</button>
+        </div>
+
+        {/* photo */}
       </div>
       <div className="PersonalInfo-right">Right side</div>
     </div>

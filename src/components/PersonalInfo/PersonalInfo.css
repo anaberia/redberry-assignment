@@ -104,3 +104,28 @@
   border-radius: 4px;
   border: 1px solid #bcbcbc;
 }
+
+.Photo-container {
+  display: flex;
+  margin-top: 54px;
+}
+
+.Personal-photoUp {
+  /* 232 after fonts */
+  width: 247px;
+  margin-left: 150px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.Photo-upload {
+  border: none;
+  margin-left: 19px;
+  font-size: 14px;
+  background: #0e80bf;
+  color: #ffffff;
+  border-radius: 4px;
+  padding-inline: 19px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+}
