@@ -1,0 +1,45 @@
+.Description-input {
+  resize: none;
+  width: 766px;
+  background: #ffffff;
+  margin-left: 150px;
+  padding-inline: 16px;
+  padding-top: 13px;
+  padding-bottom: 145px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #bcbcbc;
+}
+
+.Finish-btn {
+  font-size: 16px;
+  font-weight: 500;
+  width: 151px;
+  padding-block: 14px;
+  padding-inline: 19.5px;
+  border-radius: 4px;
+  border: none;
+  background: #6b40e3;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.Experience-lastBtnGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 150px;
+  margin-top: 168px;
+  width: 797px;
+}
+
+.Education-btn {
+  margin-top: 90px;
+  margin-left: 150px;
+  width: 289px;
+  height: 48px;
+  background: #62a1eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}

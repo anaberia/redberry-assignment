@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./ExperienceInfo.css";
+import "./EducationInfo.css";
 
-function ExperienceInfo() {
+function EducationInfo() {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
@@ -14,39 +14,33 @@ function ExperienceInfo() {
             </div>
           </Link>
           <div className="PersonalInfo-header">
-            <div className="Header-txt">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
-            <div className="Header-pg">2/3</div>
+            <div className="Header-txt">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</div>
+            <div className="Header-pg">3/3</div>
           </div>
         </div>
         {/* header with old styles is ok */}
         {/* Position */}
         <div className="Email-container">
-          <div className="Email-title">თანამდებობა</div>
+          <div className="Email-title">სასწავლებელი</div>
           <input
             type="text"
             className="Email-input"
-            placeholder="დეველოპერი, დიზაინერი, ა.შ."
+            placeholder="სასწავლებელი"
           />
           <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
         </div>
         {/* Position */}
-        {/* Empoyer */}
-        <div className="Email-container">
-          <div className="Email-title">დამსაქმებელი</div>
-          <input
-            type="text"
-            className="Email-input"
-            placeholder="დამსაქმებელი"
-          />
-          <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
-        </div>
-        {/* Empoyer */}
+
         {/* input */}
         <div className="Input-containerWrapper">
           <div className="Input-container">
             <div className="Name-container">
-              <div className="Name">დაწყების რიცხვი</div>
-              <input type="text" className="NameInput" placeholder="1111111" />
+              <div className="Name">ხარისხი</div>
+              <input
+                type="text"
+                className="NameInput"
+                placeholder="აირჩიეთ ხარისხი"
+              />
             </div>
             <div className="LastName-container">
               <div className="Name">დამთავრების რიცხვი</div>
@@ -60,21 +54,19 @@ function ExperienceInfo() {
           <div className="AboutMe-title">აღწერა</div>
           <textarea
             type="text"
-            className="AboutMe-input"
-            placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
+            className="Description-input"
+            placeholder="განათლების აღწერა"
           />
         </div>
         {/* about me */}
         {/* experience button */}
-        <button className="Experience-btn">მეტი გამოცდილების დამატება</button>
+        <button className="Education-btn">სხვა სასწავლებლის დამატება</button>
         {/* experience button */}
-        <div className="Experience-btnGroup">
-          <Link to="/PersonalInfo">
+        <div className="Experience-lastBtnGroup">
+          <Link to="/ExperienceInfo">
             <button className="Experience-backBtn">ᲣᲙᲐᲜ</button>
           </Link>
-          <Link to="/EducationInfo">
-            <button className="Experience-nextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button>
-          </Link>
+          <button className="Finish-btn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button>
         </div>
       </div>
       <div className="ExperienceInfo-right"></div>
@@ -82,4 +74,4 @@ function ExperienceInfo() {
   );
 }
 
-export default ExperienceInfo;
+export default EducationInfo;
