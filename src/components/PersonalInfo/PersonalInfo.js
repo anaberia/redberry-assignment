@@ -35,8 +35,41 @@ function PersonalInfo() {
           <div className="Personal-photoUp">პირადი ფოტოს ატვირთვა</div>
           <button className="Photo-upload">ატვირთვა</button>
         </div>
-
         {/* photo */}
+        {/* about me */}
+        <div className="AboutMe-container">
+          <div className="AboutMe-title">ჩემ შესახებ(არასავალდებულო)</div>
+          <textarea
+            type="text"
+            className="AboutMe-input"
+            placeholder="ზოგადი ინფო შენს შესახებ"
+          />
+        </div>
+        {/* about me */}
+        {/* email */}
+        <div className="Email-container">
+          <div className="Email-title">ელ.ფოსტა</div>
+          <input
+            type="text"
+            className="Email-input"
+            placeholder="anzor666@redberry.ge"
+          />
+          <div className="Email-valid">უნდა მთავრდებოდეს @redberry.ge-ით</div>
+        </div>
+        {/* email */}
+        {/* phone */}
+        <div className="Mobile-container">
+          <div className="Mobile-title">მობილურის ნომერი</div>
+          <input
+            type="text"
+            className="Mobile-input"
+            placeholder="+995 551 12 34 56"
+          />
+          <div className="Mobile-valid">
+            უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს
+          </div>
+        </div>
+        {/* phone */}
       </div>
       <div className="PersonalInfo-right">Right side</div>
     </div>
