@@ -69,7 +69,7 @@ function EducationInfo() {
           <button className="Finish-btn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button>
         </div>
       </div>
-      <div className="ExperienceInfo-right"></div>
+      {/* <div className="ExperienceInfo-right"></div> */}
     </div>
   );
 }

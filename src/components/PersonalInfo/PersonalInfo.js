@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./PersonalInfo.css";
 
-function PersonalInfo() {
+function PersonalInfo({ setName }) {
+  // console.log(setName("ds"));
   return (
     <div className="PersonalInfo">
       <div className="PersonalInfo-left">
@@ -81,7 +82,6 @@ function PersonalInfo() {
         </Link>
         {/* button */}
       </div>
-      <div className="PersonalInfo-right">Right side</div>
     </div>
   );
 }

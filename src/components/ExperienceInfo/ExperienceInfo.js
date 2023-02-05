@@ -77,7 +77,7 @@ function ExperienceInfo() {
           </Link>
         </div>
       </div>
-      <div className="ExperienceInfo-right"></div>
+      {/* <div className="ExperienceInfo-right"></div> */}
     </div>
   );
 }
