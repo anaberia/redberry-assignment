@@ -7,12 +7,14 @@ import ExperienceInfo from "./components/ExperienceInfo/ExperienceInfo";
 import EducationInfo from "./components/EducationInfo/EducationInfo";
 
 function App() {
-  let [name, setName] = useState("");
-  let [lastName, setLastName] = useState("");
-  let [photo, setPhoto] = useState("");
-  let [aboutMe, setAboutMe] = useState("");
-  let [email, setEmail] = useState("");
-  let [phone, setPhone] = useState("");
+  let [info, setInfo] = useState({
+    name: "",
+    lastName: "",
+    photo: "",
+    aboutMe: "",
+    email: "",
+    phone: "",
+  });
 
   return (
     <div className="App-container">
@@ -21,15 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="/PersonalInfo"
-            element={
-              <PersonalInfo
-                setName={setName}
-                setLastName={setLastName}
-                setAboutMe={setAboutMe}
-                setEmail={setEmail}
-                setPhone={setPhone}
-              />
-            }
+            element={<PersonalInfo info={info} setInfo={setInfo} />}
           />
           <Route path="/ExperienceInfo" element={<ExperienceInfo />} />
           <Route path="/EducationInfo" element={<EducationInfo />} />
@@ -41,15 +35,15 @@ function App() {
         <div className="Output-personalInfo">
           <div className="Output-left">
             <div className="Output-nameGroup">
-              <div className="Output-name">{name}</div>
-              <div className="Output-lastName">{lastName}</div>
+              <div className="Output-name">{info.name}</div>
+              <div className="Output-lastName">{info.lastName}</div>
             </div>
-            <div className="Output-email">{email}</div>
-            <div className="Output-phone">{phone}</div>
+            <div className="Output-email">{info.email}</div>
+            <div className="Output-phone">{info.phone}</div>
             <div className="Output-aboutMeTitle">
-              {aboutMe && "ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ"}
+              {info.aboutMe && "ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ"}
             </div>
-            <div className="Output-aboutMe">{aboutMe}</div>
+            <div className="Output-aboutMe">{info.aboutMe}</div>
           </div>
           {/* <div className="Output-photo"></div> */}
         </div>
