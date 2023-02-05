@@ -2,8 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./PersonalInfo.css";
 
-function PersonalInfo({ setName }) {
-  // console.log(setName("ds"));
+function PersonalInfo({
+  setName,
+  setLastName,
+  setAboutMe,
+  setEmail,
+  setPhone,
+}) {
+  let nameHandler = (e) => {
+    setName(e.target.value);
+  };
+  let lastNameHandler = (e) => {
+    setLastName(e.target.value);
+  };
+  let aboutMeHandler = (e) => {
+    setAboutMe(e.target.value);
+  };
+  let emailHandler = (e) => {
+    setEmail(e.target.value);
+  };
+  let phoneHandler = (e) => {
+    setPhone(e.target.value);
+  };
+
   return (
     <div className="PersonalInfo">
       <div className="PersonalInfo-left">
@@ -25,12 +46,22 @@ function PersonalInfo({ setName }) {
         <div className="Input-container">
           <div className="Name-container">
             <div className="Name">სახელი</div>
-            <input type="text" className="NameInput" placeholder="ანზორ" />
+            <input
+              type="text"
+              className="NameInput"
+              placeholder="ანზორ"
+              onChange={nameHandler}
+            />
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
           <div className="LastName-container">
             <div className="Name">გვარი</div>
-            <input type="text" className="NameInput" placeholder="მუმლაძე" />
+            <input
+              type="text"
+              className="NameInput"
+              placeholder="მუმლაძე"
+              onChange={lastNameHandler}
+            />
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
         </div>
@@ -49,6 +80,7 @@ function PersonalInfo({ setName }) {
             type="text"
             className="AboutMe-input"
             placeholder="ზოგადი ინფო შენს შესახებ"
+            onChange={aboutMeHandler}
           />
         </div>
         {/* about me */}
@@ -59,6 +91,7 @@ function PersonalInfo({ setName }) {
             type="text"
             className="Email-input"
             placeholder="anzor666@redberry.ge"
+            onChange={emailHandler}
           />
           <div className="Email-valid">უნდა მთავრდებოდეს @redberry.ge-ით</div>
         </div>
@@ -70,6 +103,7 @@ function PersonalInfo({ setName }) {
             type="text"
             className="Email-input"
             placeholder="+995 551 12 34 56"
+            onChange={phoneHandler}
           />
           <div className="Email-valid">
             უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს
