@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ExperienceInfo.css";
 
-function ExperienceInfo() {
+function ExperienceInfo({ info, setInfo }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
@@ -26,6 +26,7 @@ function ExperienceInfo() {
             type="text"
             className="Email-input"
             placeholder="დეველოპერი, დიზაინერი, ა.შ."
+            onChange={(e) => setInfo({ ...info, position: e.target.value })}
           />
           <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
         </div>
@@ -37,6 +38,7 @@ function ExperienceInfo() {
             type="text"
             className="Email-input"
             placeholder="დამსაქმებელი"
+            onChange={(e) => setInfo({ ...info, employer: e.target.value })}
           />
           <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
         </div>
@@ -62,6 +64,7 @@ function ExperienceInfo() {
             type="text"
             className="AboutMe-input"
             placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
+            onChange={(e) => setInfo({ ...info, description: e.target.value })}
           />
         </div>
         {/* about me */}

@@ -15,6 +15,15 @@ function App() {
     aboutMe: "",
     email: "",
     phone: "",
+    position: "",
+    employer: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+    university: "",
+    degree: "",
+    degreeEndDate: "",
+    eduDescription: "",
   });
 
   return (
@@ -26,8 +35,14 @@ function App() {
             path="/PersonalInfo"
             element={<PersonalInfo info={info} setInfo={setInfo} />}
           />
-          <Route path="/ExperienceInfo" element={<ExperienceInfo />} />
-          <Route path="/EducationInfo" element={<EducationInfo />} />
+          <Route
+            path="/ExperienceInfo"
+            element={<ExperienceInfo info={info} setInfo={setInfo} />}
+          />
+          <Route
+            path="/EducationInfo"
+            element={<EducationInfo info={info} setInfo={setInfo} />}
+          />
         </Routes>
       </Router>
 
