@@ -23,6 +23,7 @@ function ExperienceInfo({ info, setInfo }) {
         <div className="Email-container">
           <div className="Email-title">თანამდებობა</div>
           <input
+            value={info.position}
             type="text"
             className="Email-input"
             placeholder="დეველოპერი, დიზაინერი, ა.შ."
@@ -35,6 +36,7 @@ function ExperienceInfo({ info, setInfo }) {
         <div className="Email-container">
           <div className="Email-title">დამსაქმებელი</div>
           <input
+            value={info.employer}
             type="text"
             className="Email-input"
             placeholder="დამსაქმებელი"
@@ -73,6 +75,7 @@ function ExperienceInfo({ info, setInfo }) {
         <div>
           <div className="AboutMe-title">აღწერა</div>
           <textarea
+            value={info.description}
             type="text"
             className="AboutMe-input"
             placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"

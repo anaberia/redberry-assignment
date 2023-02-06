@@ -23,6 +23,7 @@ function EducationInfo({ info, setInfo }) {
         <div className="Email-container">
           <div className="Email-title">სასწავლებელი</div>
           <input
+            value={info.university}
             type="text"
             className="Email-input"
             placeholder="სასწავლებელი"
@@ -38,6 +39,7 @@ function EducationInfo({ info, setInfo }) {
             <div className="Name-container">
               <div className="Name">ხარისხი</div>
               <input
+                value={info.degree}
                 type="text"
                 className="NameInput"
                 placeholder="აირჩიეთ ხარისხი"
@@ -62,6 +64,7 @@ function EducationInfo({ info, setInfo }) {
         <div>
           <div className="AboutMe-title">აღწერა</div>
           <textarea
+            value={info.eduDescription}
             type="text"
             className="Description-input"
             placeholder="განათლების აღწერა"

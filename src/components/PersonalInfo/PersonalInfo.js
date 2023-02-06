@@ -36,6 +36,7 @@ function PersonalInfo({ info, setInfo }) {
           <div className="LastName-container">
             <div className="Name">გვარი</div>
             <input
+              value={info.lastName}
               type="text"
               className="NameInput"
               placeholder="მუმლაძე"
@@ -56,6 +57,7 @@ function PersonalInfo({ info, setInfo }) {
         <div className="AboutMe-container">
           <div className="AboutMe-title">ჩემ შესახებ (არასავალდებულო)</div>
           <textarea
+            value={info.aboutMe}
             type="text"
             className="AboutMe-input"
             placeholder="ზოგადი ინფო შენს შესახებ"
@@ -67,6 +69,7 @@ function PersonalInfo({ info, setInfo }) {
         <div className="Email-container">
           <div className="Email-title">ელ.ფოსტა</div>
           <input
+            value={info.email}
             type="text"
             className="Email-input"
             placeholder="anzor666@redberry.ge"
@@ -79,6 +82,7 @@ function PersonalInfo({ info, setInfo }) {
         <div className="Email-container">
           <div className="Email-title">მობილურის ნომერი</div>
           <input
+            value={info.phone}
             type="text"
             className="Email-input"
             placeholder="+995 551 12 34 56"

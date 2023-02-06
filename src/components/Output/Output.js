@@ -11,8 +11,18 @@ function Output({ info }) {
             <div className="Output-name">{info.name}</div>
             <div className="Output-lastName">{info.lastName}</div>
           </div>
-          <div className="Output-email">{info.email}</div>
-          <div className="Output-phone">{info.phone}</div>
+          {info.email && (
+            <div className="Output-email">
+              <img src="./images/email.png" alt="email" />
+              <div className="Email-txt">{info.email}</div>
+            </div>
+          )}
+          {info.phone && (
+            <div className="Output-phone">
+              <img src="./images/phone.png" alt="phone" />
+              <div className="Phone-txt">{info.phone}</div>
+            </div>
+          )}
           <div className="Output-aboutMeTitle">
             {info.aboutMe && "ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ"}
           </div>

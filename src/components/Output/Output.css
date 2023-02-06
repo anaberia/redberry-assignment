@@ -25,17 +25,27 @@
 }
 
 .Output-email {
+  display: flex;
   color: #1a1a1a;
   font-size: 18px;
   margin-left: 82.67px;
   margin-top: 17px;
 }
 
+.Email-txt {
+  margin-left: 11.67px;
+}
+
 .Output-phone {
+  display: flex;
   color: #1a1a1a;
   font-size: 18px;
   margin-left: 82.55px;
   margin-top: 10px;
+}
+
+.Phone-txt {
+  margin-left: 11.81px;
 }
 
 .Output-aboutMeTitle {
