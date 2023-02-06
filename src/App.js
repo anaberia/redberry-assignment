@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/Home";
@@ -7,24 +7,21 @@ import ExperienceInfo from "./components/ExperienceInfo/ExperienceInfo";
 import EducationInfo from "./components/EducationInfo/EducationInfo";
 import Output from "./components/Output/Output";
 
+const getLocalStorage = () => {
+  if (localStorage.getItem("info")) {
+    return JSON.parse(localStorage.getItem("info"));
+  } else {
+    return [];
+  }
+};
+
 function App() {
-  let [info, setInfo] = useState({
-    name: "",
-    lastName: "",
-    photo: "",
-    aboutMe: "",
-    email: "",
-    phone: "",
-    position: "",
-    employer: "",
-    startDate: "",
-    endDate: "",
-    description: "",
-    university: "",
-    degree: "",
-    eduEndDate: "",
-    eduDescription: "",
-  });
+  let [info, setInfo] = useState(getLocalStorage());
+  console.log(info);
+
+  useEffect(() => {
+    localStorage.setItem("info", JSON.stringify(info));
+  }, [info]);
 
   return (
     <div className="App-container">

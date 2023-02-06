@@ -25,6 +25,7 @@ function PersonalInfo({ info, setInfo }) {
           <div className="Name-container">
             <div className="Name">სახელი</div>
             <input
+              value={info.name}
               type="text"
               className="NameInput"
               placeholder="ანზორ"

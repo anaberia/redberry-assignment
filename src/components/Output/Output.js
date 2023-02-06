@@ -18,36 +18,52 @@ function Output({ info }) {
           </div>
           <div className="Output-aboutMe">{info.aboutMe}</div>
         </div>
-        <div className="Output-photo"></div>
+        {info.photo && <div className="Output-photo"></div>}
       </div>
       {/* Experience */}
       <div className="Output-experienceInfo">
-        <div className="Output-right">
+        {(info.position ||
+          info.employer ||
+          info.startDate ||
+          info.endDate ||
+          info.description) && (
           <div className="Output-experience">{"ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ"}</div>
-          <div className="Output-occupation">
+        )}
+        <div className="Output-occupation">
+          {info.position && (
             <div className="Output-position">{info.position},</div>
-            <div className="Output-employer">{info.employer}</div>
-          </div>
-          <div className="Output-dateGroup">
-            <div className="Output-startDate">{info.startDate}-</div>
-            <div className="Output-endDate">{info.endDate}</div>
-          </div>
-          <div className="Output-description">{info.description}</div>
+          )}
+          <div className="Output-employer">{info.employer}</div>
         </div>
+        <div className="Output-dateGroup">
+          {info.startDate && (
+            <div className="Output-startDate">{info.startDate}-</div>
+          )}
+          <div className="Output-endDate">{info.endDate}</div>
+        </div>
+        <div className="Output-description">{info.description}</div>
       </div>
       {/* Experience */}
       {/* Education */}
-      <div className="Output-educationInfo">
-        <div className="Output-education">
-          <div className="Output-educationTitle">{"ᲒᲐᲜᲐᲗᲚᲔᲑᲐ"}</div>
-          <div className="Output-educationDegree">
-            <div className="Output-university">{info.university},</div>
-            <div className="Output-degree">{info.degree}</div>
+      {(info.eduDescription ||
+        info.university ||
+        info.degree ||
+        info.eduEndDate ||
+        info.eduDescription) && (
+        <div className="Output-educationInfo">
+          <div className="Output-education">
+            <div className="Output-educationTitle">{"ᲒᲐᲜᲐᲗᲚᲔᲑᲐ"}</div>
+            <div className="Output-educationDegree">
+              {info.university && (
+                <div className="Output-university">{info.university},</div>
+              )}
+              <div className="Output-degree">{info.degree}</div>
+            </div>
+            <div className="Output-dateGroup">{info.eduEndDate}</div>
+            <div className="Output-description">{info.eduDescription}</div>
           </div>
-          <div className="Output-dateGroup">{info.eduEndDate}</div>
-          <div className="Output-description">{info.eduDescription}</div>
         </div>
-      </div>
+      )}
       {/* Education */}
       <div className="Output-logo">
         <img src="./images/logo3.png" alt="outputLogo" />
