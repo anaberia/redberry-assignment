@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./EducationInfo.css";
 
-function EducationInfo() {
+function EducationInfo({ info, setInfo }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
@@ -26,6 +26,7 @@ function EducationInfo() {
             type="text"
             className="Email-input"
             placeholder="სასწავლებელი"
+            onChange={(e) => setInfo({ ...info, university: e.target.value })}
           />
           <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
         </div>
@@ -40,11 +41,19 @@ function EducationInfo() {
                 type="text"
                 className="NameInput"
                 placeholder="აირჩიეთ ხარისხი"
+                onChange={(e) => setInfo({ ...info, degree: e.target.value })}
               />
             </div>
             <div className="LastName-container">
               <div className="Name">დამთავრების რიცხვი</div>
-              <input type="text" className="NameInput" placeholder="111111" />
+              <input
+                type="text"
+                className="NameInput"
+                placeholder="111111"
+                onChange={(e) =>
+                  setInfo({ ...info, eduEndDate: e.target.value })
+                }
+              />
             </div>
           </div>
         </div>
@@ -56,6 +65,9 @@ function EducationInfo() {
             type="text"
             className="Description-input"
             placeholder="განათლების აღწერა"
+            onChange={(e) =>
+              setInfo({ ...info, eduDescription: e.target.value })
+            }
           />
         </div>
         {/* about me */}

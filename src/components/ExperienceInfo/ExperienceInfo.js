@@ -48,11 +48,23 @@ function ExperienceInfo({ info, setInfo }) {
           <div className="Input-container">
             <div className="Name-container">
               <div className="Name">დაწყების რიცხვი</div>
-              <input type="text" className="NameInput" placeholder="1111111" />
+              <input
+                type="text"
+                className="NameInput"
+                placeholder="1111111"
+                onChange={(e) =>
+                  setInfo({ ...info, startDate: e.target.value })
+                }
+              />
             </div>
             <div className="LastName-container">
               <div className="Name">დამთავრების რიცხვი</div>
-              <input type="text" className="NameInput" placeholder="111111" />
+              <input
+                type="text"
+                className="NameInput"
+                placeholder="111111"
+                onChange={(e) => setInfo({ ...info, endDate: e.target.value })}
+              />
             </div>
           </div>
         </div>

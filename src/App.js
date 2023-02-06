@@ -22,7 +22,7 @@ function App() {
     description: "",
     university: "",
     degree: "",
-    degreeEndDate: "",
+    eduEndDate: "",
     eduDescription: "",
   });
 

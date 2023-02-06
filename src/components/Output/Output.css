@@ -107,3 +107,36 @@
   color: #000000;
   margin-left: 80px;
 }
+
+.Output-logo {
+  position: absolute;
+  margin-left: 78px;
+  top: 994px;
+}
+
+.Output-educationTitle {
+  margin-top: 26px;
+  margin-left: 80px;
+  padding-top: 26px;
+  color: #f93b1d;
+  width: 662px;
+  font-weight: 700;
+  font-size: 18px;
+  border-top: 1px solid #c8c8c8;
+}
+
+.Output-educationDegree {
+  display: flex;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.Output-university {
+  margin-left: 80px;
+}
+
+.Output-degree {
+  margin-left: 16px;
+}
