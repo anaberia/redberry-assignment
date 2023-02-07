@@ -1,56 +1,62 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/Home";
 import PersonalInfo from "./components/PersonalInfo/PersonalInfo";
 import ExperienceInfo from "./components/ExperienceInfo/ExperienceInfo";
 import EducationInfo from "./components/EducationInfo/EducationInfo";
 import Output from "./components/Output/Output";
+import { getLocalStorage } from "./helpers/helpers";
 
-const getLocalInfo = () => {
-  if (localStorage.getItem("info")) {
-    return JSON.parse(localStorage.getItem("info"));
-  } else {
-    return [];
-  }
-};
-
-const getLocalPage = () => {
-  if (localStorage.getItem("page")) {
-    return JSON.parse(localStorage.getItem("page"));
-  } else {
-    return "home";
-  }
-};
-// App component
 function App() {
-  let [info, setInfo] = useState(getLocalInfo());
-  let [page, setPage] = useState(getLocalPage());
+  let [info, setInfo] = useState(getLocalStorage("info"));
+
+  let resetter = () => {
+    localStorage.removeItem("info");
+    setInfo([]);
+  };
 
   useEffect(() => {
-    if (page === "home") {
-      setInfo([]);
-    }
     localStorage.setItem("info", JSON.stringify(info));
-    localStorage.setItem("page", JSON.stringify(page));
-  }, [info, page]);
+  }, [info]);
 
   return (
     <div className="App-container">
-      {/* leftContainer */}
-      {page === "home" && <Home setPage={setPage} />}
-      {page === "personal" && (
-        <PersonalInfo info={info} setInfo={setInfo} setPage={setPage} />
-      )}
-      {page === "experience" && (
-        <ExperienceInfo info={info} setInfo={setInfo} setPage={setPage} />
-      )}
-      {page === "education" && (
-        <EducationInfo info={info} setInfo={setInfo} setPage={setPage} />
-      )}
-      {/* leftContainer */}
-
-      {/* output -----------------------------------------------*/}
-      {page !== "home" && <Output info={info} />}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/PersonalInfo"
+            element={
+              <PersonalInfo info={info} setInfo={setInfo} resetter={resetter} />
+            }
+          />
+          <Route
+            path="/ExperienceInfo"
+            element={
+              <ExperienceInfo
+                info={info}
+                setInfo={setInfo}
+                resetter={resetter}
+              />
+            }
+          />
+          <Route
+            path="/EducationInfo"
+            element={
+              <EducationInfo
+                info={info}
+                setInfo={setInfo}
+                resetter={resetter}
+              />
+            }
+          />
+        </Routes>
+      </Router>
+      {/* output component */}
+      {/* {localStorage.getItem("info")  && */}
+      <Output info={info} />
+      {/* } */}
     </div>
   );
 }

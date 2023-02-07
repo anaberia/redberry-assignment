@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./PersonalInfo.css";
 
-function PersonalInfo({ info, setInfo, setPage }) {
+function PersonalInfo({ info, setInfo, resetter }) {
   let [img, setImg] = useState(null);
 
   return (
@@ -9,16 +11,11 @@ function PersonalInfo({ info, setInfo, setPage }) {
       <div className="PersonalInfo-left">
         {/* header */}
         <div className="PersonalInfo-headerContainer">
-          {/* <Link style={{ textDecoration: "none" }} to="/"> */}
-          <div
-            onClick={() => {
-              setPage("home");
-            }}
-            className="PersonalInfo-backBtn"
-          >
-            <div className="vector">{"<"}</div>
-          </div>
-          {/* </Link> */}
+          <Link style={{ textDecoration: "none" }} to="/">
+            <div onClick={resetter} className="PersonalInfo-backBtn">
+              <div className="vector">{"<"}</div>
+            </div>
+          </Link>
           <div className="PersonalInfo-header">
             <div className="Header-txt">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</div>
             <div className="Header-pg">1/3</div>
@@ -65,9 +62,8 @@ function PersonalInfo({ info, setInfo, setPage }) {
             id="imgs"
             style={{ display: "none" }}
             type="file"
-            onChange={(e) => {
-              localStorage.setItem("img", e.target.files[0]);
-              // setImg(event.target.files[0]);
+            onChange={(event) => {
+              setImg(event.target.files[0]);
             }}
           />
         </div>
@@ -115,9 +111,9 @@ function PersonalInfo({ info, setInfo, setPage }) {
         {/* phone */}
         {/* button */}
 
-        <button className="Next-btn" onClick={() => setPage("experience")}>
-          ᲨᲔᲛᲓᲔᲒᲘ
-        </button>
+        <Link style={{ textDecoration: "none" }} to="/ExperienceInfo">
+          <button className="Next-btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
+        </Link>
 
         {/* button */}
       </div>

@@ -1,16 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ExperienceInfo.css";
 
-function ExperienceInfo({ info, setInfo, setPage }) {
+function ExperienceInfo({ info, setInfo, resetter }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
         {/* header with old styles is ok */}
         <div className="PersonalInfo-headerContainer">
-          <div className="PersonalInfo-backBtn" onClick={() => setPage("home")}>
-            <div className="vector">{"<"}</div>
-          </div>
-
+          <Link style={{ textDecoration: "none" }} to="/">
+            <div className="PersonalInfo-backBtn" onClick={resetter}>
+              <div className="vector">{"<"}</div>
+            </div>
+          </Link>
           <div className="PersonalInfo-header">
             <div className="Header-txt">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
             <div className="Header-pg">2/3</div>
@@ -85,21 +87,14 @@ function ExperienceInfo({ info, setInfo, setPage }) {
         <button className="Experience-btn">მეტი გამოცდილების დამატება</button>
         {/* experience button */}
         <div className="Experience-btnGroup">
-          <button
-            className="Experience-backBtn"
-            onClick={() => setPage("personal")}
-          >
-            ᲣᲙᲐᲜ
-          </button>
-          <button
-            className="Experience-nextBtn"
-            onClick={() => setPage("education")}
-          >
-            ᲨᲔᲛᲓᲔᲒᲘ
-          </button>
+          <Link style={{ textDecoration: "none" }} to="/PersonalInfo">
+            <button className="Experience-backBtn">ᲣᲙᲐᲜ</button>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to="/EducationInfo">
+            <button className="Experience-nextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button>
+          </Link>
         </div>
       </div>
-      {/* <div className="ExperienceInfo-right"></div> */}
     </div>
   );
 }
