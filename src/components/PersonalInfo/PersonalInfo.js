@@ -1,18 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import "./PersonalInfo.css";
 
-function PersonalInfo({ info, setInfo }) {
+function PersonalInfo({ info, setInfo, setPage }) {
+  let [sur, setSur] = useState(null);
+
   return (
     <div className="PersonalInfo">
       <div className="PersonalInfo-left">
         {/* header */}
         <div className="PersonalInfo-headerContainer">
-          <Link style={{ textDecoration: "none" }} to="/">
-            <div className="PersonalInfo-backBtn">
-              <div className="vector">{"<"}</div>
-            </div>
-          </Link>
+          {/* <Link style={{ textDecoration: "none" }} to="/"> */}
+          <div onClick={() => setPage("home")} className="PersonalInfo-backBtn">
+            <div className="vector">{"<"}</div>
+          </div>
+          {/* </Link> */}
           <div className="PersonalInfo-header">
             <div className="Header-txt">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</div>
             <div className="Header-pg">1/3</div>
@@ -48,10 +49,17 @@ function PersonalInfo({ info, setInfo }) {
 
         {/* input */}
         {/* photo */}
+
         <div className="Photo-container">
           <div className="Personal-photoUp">პირადი ფოტოს ატვირთვა</div>
-          <button className="Photo-upload">ატვირთვა</button>
+          <input
+            type="file"
+            onChange={(event) => {
+              setSur(event.target.files[0]);
+            }}
+          />
         </div>
+
         {/* photo */}
         {/* about me */}
         <div className="AboutMe-container">
@@ -94,9 +102,11 @@ function PersonalInfo({ info, setInfo }) {
         </div>
         {/* phone */}
         {/* button */}
-        <Link to="/ExperienceInfo">
-          <button className="Next-btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
-        </Link>
+
+        <button className="Next-btn" onClick={() => setPage("experience")}>
+          ᲨᲔᲛᲓᲔᲒᲘ
+        </button>
+
         {/* button */}
       </div>
     </div>

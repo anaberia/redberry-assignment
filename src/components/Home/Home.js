@@ -1,7 +1,6 @@
 import "./Home.css";
-import { Link } from "react-router-dom";
 
-function Home() {
+function Home({ setPage }) {
   return (
     <div className="App">
       <div className="App-header">
@@ -13,9 +12,11 @@ function Home() {
       <div className="App-logo2">
         <img src="./images/logo2.png" alt="logo2" />
       </div>
-      <Link to="/PersonalInfo">
-        <button className="App-addBtn">ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ</button>
-      </Link>
+      {/* <Link to="/PersonalInfo"> */}
+      <button onClick={() => setPage("personal")} className="App-addBtn">
+        ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ
+      </button>
+      {/* </Link> */}
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/Home";
 import PersonalInfo from "./components/PersonalInfo/PersonalInfo";
@@ -7,7 +6,7 @@ import ExperienceInfo from "./components/ExperienceInfo/ExperienceInfo";
 import EducationInfo from "./components/EducationInfo/EducationInfo";
 import Output from "./components/Output/Output";
 
-const getLocalStorage = () => {
+const getLocalInfo = () => {
   if (localStorage.getItem("info")) {
     return JSON.parse(localStorage.getItem("info"));
   } else {
@@ -15,36 +14,40 @@ const getLocalStorage = () => {
   }
 };
 
+const getLocalPage = () => {
+  if (localStorage.getItem("page")) {
+    return JSON.parse(localStorage.getItem("page"));
+  } else {
+    return "home";
+  }
+};
 function App() {
-  let [info, setInfo] = useState(getLocalStorage());
-  console.log(info);
+  let [info, setInfo] = useState(getLocalInfo());
+  let [page, setPage] = useState(getLocalPage());
+
+  // let reseter = () => {
+  //   localStorage.removeItem("info");
+  // };
 
   useEffect(() => {
     localStorage.setItem("info", JSON.stringify(info));
-  }, [info]);
+    localStorage.setItem("page", JSON.stringify(page));
+  }, [info, page]);
 
   return (
     <div className="App-container">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/PersonalInfo"
-            element={<PersonalInfo info={info} setInfo={setInfo} />}
-          />
-          <Route
-            path="/ExperienceInfo"
-            element={<ExperienceInfo info={info} setInfo={setInfo} />}
-          />
-          <Route
-            path="/EducationInfo"
-            element={<EducationInfo info={info} setInfo={setInfo} />}
-          />
-        </Routes>
-      </Router>
+      {page === "home" && <Home setPage={setPage} />}
+      {page === "personal" && (
+        <PersonalInfo info={info} setInfo={setInfo} setPage={setPage} />
+      )}
 
-      {/* output component */}
-      <Output info={info} />
+      {page === "experience" && (
+        <ExperienceInfo info={info} setInfo={setInfo} setPage={setPage} />
+      )}
+      {page === "education" && <EducationInfo info={info} setInfo={setInfo} />}
+
+      {/* output */}
+      {page !== "home" && <Output info={info} />}
     </div>
   );
 }
