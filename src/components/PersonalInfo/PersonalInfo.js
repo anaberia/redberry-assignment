@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./PersonalInfo.css";
 
 function PersonalInfo({ info, setInfo, setPage }) {
-  let [sur, setSur] = useState(null);
+  let [img, setImg] = useState(null);
 
   return (
     <div className="PersonalInfo">
@@ -57,10 +57,17 @@ function PersonalInfo({ info, setInfo, setPage }) {
 
         <div className="Photo-container">
           <div className="Personal-photoUp">პირადი ფოტოს ატვირთვა</div>
+
+          <label className="Photo-upload" htmlFor="imgs">
+            ატვირთვა
+          </label>
           <input
+            id="imgs"
+            style={{ display: "none" }}
             type="file"
-            onChange={(event) => {
-              setSur(event.target.files[0]);
+            onChange={(e) => {
+              localStorage.setItem("img", e.target.files[0]);
+              // setImg(event.target.files[0]);
             }}
           />
         </div>
