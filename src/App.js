@@ -21,15 +21,15 @@ const getLocalPage = () => {
     return "home";
   }
 };
+// App component
 function App() {
   let [info, setInfo] = useState(getLocalInfo());
   let [page, setPage] = useState(getLocalPage());
 
-  // let reseter = () => {
-  //   localStorage.removeItem("info");
-  // };
-
   useEffect(() => {
+    if (page === "home") {
+      setInfo([]);
+    }
     localStorage.setItem("info", JSON.stringify(info));
     localStorage.setItem("page", JSON.stringify(page));
   }, [info, page]);

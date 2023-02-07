@@ -10,7 +10,12 @@ function PersonalInfo({ info, setInfo, setPage }) {
         {/* header */}
         <div className="PersonalInfo-headerContainer">
           {/* <Link style={{ textDecoration: "none" }} to="/"> */}
-          <div onClick={() => setPage("home")} className="PersonalInfo-backBtn">
+          <div
+            onClick={() => {
+              setPage("home");
+            }}
+            className="PersonalInfo-backBtn"
+          >
             <div className="vector">{"<"}</div>
           </div>
           {/* </Link> */}
