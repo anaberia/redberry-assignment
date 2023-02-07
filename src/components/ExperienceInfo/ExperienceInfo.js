@@ -7,7 +7,7 @@ function ExperienceInfo({ info, setInfo, setPage }) {
       <div className="ExperienceInfo-left">
         {/* header with old styles is ok */}
         <div className="PersonalInfo-headerContainer">
-          <div className="PersonalInfo-backBtn" onClick={setPage}>
+          <div className="PersonalInfo-backBtn" onClick={() => setPage("home")}>
             <div className="vector">{"<"}</div>
           </div>
 
@@ -85,8 +85,12 @@ function ExperienceInfo({ info, setInfo, setPage }) {
         <button className="Experience-btn">მეტი გამოცდილების დამატება</button>
         {/* experience button */}
         <div className="Experience-btnGroup">
-          <button className="Experience-backBtn">ᲣᲙᲐᲜ</button>
-
+          <button
+            className="Experience-backBtn"
+            onClick={() => setPage("personal")}
+          >
+            ᲣᲙᲐᲜ
+          </button>
           <button
             className="Experience-nextBtn"
             onClick={() => setPage("education")}

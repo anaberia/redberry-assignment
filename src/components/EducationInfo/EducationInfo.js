@@ -2,13 +2,13 @@ import React from "react";
 
 import "./EducationInfo.css";
 
-function EducationInfo({ info, setInfo, reseter }) {
+function EducationInfo({ info, setInfo, setPage }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
         {/* header with old styles is ok */}
         <div className="PersonalInfo-headerContainer">
-          <div className="PersonalInfo-backBtn" onClick={reseter}>
+          <div className="PersonalInfo-backBtn" onClick={() => setPage("home")}>
             <div className="vector">{"<"}</div>
           </div>
 
@@ -77,7 +77,12 @@ function EducationInfo({ info, setInfo, reseter }) {
         <button className="Education-btn">სხვა სასწავლებლის დამატება</button>
         {/* experience button */}
         <div className="Experience-lastBtnGroup">
-          <button className="Experience-backBtn">ᲣᲙᲐᲜ</button>
+          <button
+            className="Experience-backBtn"
+            onClick={() => setPage("experience")}
+          >
+            ᲣᲙᲐᲜ
+          </button>
 
           <button className="Finish-btn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button>
         </div>

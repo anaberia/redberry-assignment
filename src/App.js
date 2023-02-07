@@ -36,7 +36,9 @@ function App() {
 
   return (
     <div className="App-container">
+      {/* leftContainer */}
       {page === "home" && <Home setPage={setPage} />}
+
       {page === "personal" && (
         <PersonalInfo info={info} setInfo={setInfo} setPage={setPage} />
       )}
@@ -44,7 +46,10 @@ function App() {
       {page === "experience" && (
         <ExperienceInfo info={info} setInfo={setInfo} setPage={setPage} />
       )}
-      {page === "education" && <EducationInfo info={info} setInfo={setInfo} />}
+      {page === "education" && (
+        <EducationInfo info={info} setInfo={setInfo} setPage={setPage} />
+      )}
+      {/* leftContainer */}
 
       {/* output */}
       {page !== "home" && <Output info={info} />}
