@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Employment from "../Reusables/Employment/Employment";
 import "./ExperienceInfo.css";
 
 function ExperienceInfo({ info, setInfo, resetter }) {
+  let [expArray, setExpArray] = useState([1]);
+
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
@@ -19,72 +22,18 @@ function ExperienceInfo({ info, setInfo, resetter }) {
           </div>
         </div>
         {/* header with old styles is ok */}
-        {/* Position */}
-        <div className="Email-container">
-          <div className="Email-title">თანამდებობა</div>
-          <input
-            value={info.position}
-            type="text"
-            className="Email-input"
-            placeholder="დეველოპერი, დიზაინერი, ა.შ."
-            onChange={(e) => setInfo({ ...info, position: e.target.value })}
-          />
-          <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
-        </div>
-        {/* Position */}
-        {/* Empoyer */}
-        <div className="Email-container">
-          <div className="Email-title">დამსაქმებელი</div>
-          <input
-            value={info.employer}
-            type="text"
-            className="Email-input"
-            placeholder="დამსაქმებელი"
-            onChange={(e) => setInfo({ ...info, employer: e.target.value })}
-          />
-          <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
-        </div>
-        {/* Empoyer */}
-        {/* input */}
-        <div className="Input-containerWrapper">
-          <div className="Input-container">
-            <div className="Name-container">
-              <div className="Name">დაწყების რიცხვი</div>
-              <input
-                type="text"
-                className="NameInput"
-                placeholder="1111111"
-                onChange={(e) =>
-                  setInfo({ ...info, startDate: e.target.value })
-                }
-              />
-            </div>
-            <div className="LastName-container">
-              <div className="Name">დამთავრების რიცხვი</div>
-              <input
-                type="text"
-                className="NameInput"
-                placeholder="111111"
-                onChange={(e) => setInfo({ ...info, endDate: e.target.value })}
-              />
-            </div>
-          </div>
-        </div>
-        {/* input */}
-        {/* about me */}
-        <div>
-          <div className="AboutMe-title">აღწერა</div>
-          <textarea
-            value={info.description}
-            type="text"
-            className="AboutMe-input"
-            placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
-            onChange={(e) => setInfo({ ...info, description: e.target.value })}
-          />
-        </div>
-        {/* about me */}
+
+        {expArray.map((item) => {
+          return <Employment info={info} setInfo={setInfo} id={item} />;
+        })}
+
         {/* experience button */}
-        <button className="Experience-btn">მეტი გამოცდილების დამატება</button>
+        <button
+          className="Experience-btn"
+          onClick={() => setExpArray([...expArray, expArray.length + 1])}
+        >
+          მეტი გამოცდილების დამატება
+        </button>
         {/* experience button */}
         <div className="Experience-btnGroup">
           <Link style={{ textDecoration: "none" }} to="/PersonalInfo">

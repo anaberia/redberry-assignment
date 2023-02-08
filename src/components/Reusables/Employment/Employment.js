@@ -1,4 +1,6 @@
-function Employment({ info, setInfo }) {
+import "./Employment.css";
+
+function Employment({ info, setInfo, id }) {
   return (
     <div>
       <div className="Email-container">
@@ -61,6 +63,7 @@ function Employment({ info, setInfo }) {
           onChange={(e) => setInfo({ ...info, description: e.target.value })}
         />
       </div>
+      <div className="Bottom-border"></div>
     </div>
   );
 }
