@@ -3,7 +3,7 @@
 }
 
 .ExperienceInfo-left {
-  height: 1080px;
+  /* height: 1080px; */
   width: 1098px;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 }
 
 .Experience-btn {
-  margin-top: 90px;
+  margin-top: 45px;
   margin-left: 150px;
   width: 289px;
   height: 48px;
@@ -29,6 +29,7 @@
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .Experience-btnGroup {
