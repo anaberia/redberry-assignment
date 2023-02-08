@@ -53,10 +53,9 @@ function App() {
           />
         </Routes>
       </Router>
+
       {/* output component */}
-      {/* {localStorage.getItem("info")  && */}
-      <Output info={info} />
-      {/* } */}
+      {!Array.isArray(info) && <Output info={info} />}
     </div>
   );
 }

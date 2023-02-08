@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import "./PersonalInfo.css";
@@ -62,9 +62,9 @@ function PersonalInfo({ info, setInfo, resetter }) {
             id="imgs"
             style={{ display: "none" }}
             type="file"
-            onChange={(event) => {
-              setImg(event.target.files[0]);
-            }}
+            // onChange={(e) => {
+
+            // }}
           />
         </div>
 
@@ -110,7 +110,6 @@ function PersonalInfo({ info, setInfo, resetter }) {
         </div>
         {/* phone */}
         {/* button */}
-
         <Link style={{ textDecoration: "none" }} to="/ExperienceInfo">
           <button className="Next-btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
         </Link>
