@@ -28,7 +28,7 @@ function Output({ info }) {
           </div>
           <div className="Output-aboutMe">{info.aboutMe}</div>
         </div>
-        {info.photo && <div className="Output-photo"></div>}
+        {info.photo && <img className="Output-photo" src={info.photo} alt="" />}
       </div>
       {/* Experience */}
       <div className="Output-experienceInfo">

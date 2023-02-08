@@ -1,10 +1,14 @@
-import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-
 import "./PersonalInfo.css";
 
 function PersonalInfo({ info, setInfo, resetter }) {
-  let [img, setImg] = useState(null);
+  let imgHandler = (e) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = () => {
+      setInfo({ ...info, photo: reader.result });
+    };
+  };
 
   return (
     <div className="PersonalInfo">
@@ -23,7 +27,6 @@ function PersonalInfo({ info, setInfo, resetter }) {
         </div>
         {/* header */}
         {/* input */}
-
         <div className="Input-container">
           <div className="Name-container">
             <div className="Name">სახელი</div>
@@ -48,10 +51,8 @@ function PersonalInfo({ info, setInfo, resetter }) {
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
         </div>
-
         {/* input */}
         {/* photo */}
-
         <div className="Photo-container">
           <div className="Personal-photoUp">პირადი ფოტოს ატვირთვა</div>
 
@@ -62,12 +63,9 @@ function PersonalInfo({ info, setInfo, resetter }) {
             id="imgs"
             style={{ display: "none" }}
             type="file"
-            // onChange={(e) => {
-
-            // }}
+            onChange={imgHandler}
           />
         </div>
-
         {/* photo */}
         {/* about me */}
         <div className="AboutMe-container">
@@ -113,7 +111,6 @@ function PersonalInfo({ info, setInfo, resetter }) {
         <Link style={{ textDecoration: "none" }} to="/ExperienceInfo">
           <button className="Next-btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
         </Link>
-
         {/* button */}
       </div>
     </div>
