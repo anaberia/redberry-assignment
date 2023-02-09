@@ -9,7 +9,7 @@ import Output from "./components/Output/Output";
 import { getLocalStorage } from "./helpers/helpers";
 
 function App() {
-  let [info, setInfo] = useState(getLocalStorage("info"));
+  let [info, setInfo] = useState(["", "", "", "", ""]);
 
   let resetter = () => {
     localStorage.removeItem("info");

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Employment from "../Reusables/Employment/Employment";
 import "./ExperienceInfo.css";
@@ -24,7 +24,14 @@ function ExperienceInfo({ info, setInfo, resetter }) {
         {/* header with old styles is ok */}
 
         {expArray.map((item) => {
-          return <Employment info={info} setInfo={setInfo} id={item} />;
+          return (
+            <Employment
+              item={item}
+              info={info}
+              setInfo={setInfo}
+              id={item - 1}
+            />
+          );
         })}
 
         {/* experience button */}
