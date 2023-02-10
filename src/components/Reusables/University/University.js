@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import "./University.css";
 
-function University({ education, setEducation, id }) {
+function University({ education, setEducation, id, item }) {
   const { register, handleSubmit } = useForm();
   console.log(education);
   let addHandler = (data) => {

@@ -3,16 +3,14 @@ import { Link } from "react-router-dom";
 import Employment from "../Reusables/Employment/Employment";
 import "./ExperienceInfo.css";
 
-function ExperienceInfo({ experience, setExperience, resetter }) {
-  let [expArray, setExpArray] = useState([1]);
-
+function ExperienceInfo({ experience, setExperience }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
         {/* header with old styles is ok */}
         <div className="PersonalInfo-headerContainer">
           <Link style={{ textDecoration: "none" }} to="/">
-            <div className="PersonalInfo-backBtn" onClick={resetter}>
+            <div className="PersonalInfo-backBtn" onClick={() => localStorage}>
               <div className="vector">{"<"}</div>
             </div>
           </Link>
@@ -23,12 +21,13 @@ function ExperienceInfo({ experience, setExperience, resetter }) {
         </div>
         {/* header with old styles is ok */}
 
-        {expArray.map((item) => {
+        {experience.map((item, index) => {
           return (
             <Employment
               experience={experience}
               setExperience={setExperience}
-              id={item - 1}
+              id={index}
+              item={item}
             />
           );
         })}
@@ -36,7 +35,7 @@ function ExperienceInfo({ experience, setExperience, resetter }) {
         {/* experience button */}
         <button
           className="Experience-btn"
-          onClick={() => setExpArray([...expArray, expArray.length + 1])}
+          onClick={() => setExperience([...experience, ""])}
         >
           მეტი გამოცდილების დამატება
         </button>

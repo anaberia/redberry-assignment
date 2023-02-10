@@ -13,12 +13,6 @@ function App() {
   let [experience, setExperience] = useState(getLocalStorage("experience"));
   let [education, setEducation] = useState(getLocalStorage("education"));
 
-  let resetter = () => {
-    setPersonal([]);
-    setExperience(["", "", "", "", ""]);
-    setEducation(["", "", "", "", ""]);
-  };
-
   useEffect(() => {
     localStorage.setItem("experience", JSON.stringify(experience));
     localStorage.setItem("personal", JSON.stringify(personal));
@@ -33,11 +27,7 @@ function App() {
           <Route
             path="/PersonalInfo"
             element={
-              <PersonalInfo
-                personal={personal}
-                setPersonal={setPersonal}
-                resetter={resetter}
-              />
+              <PersonalInfo personal={personal} setPersonal={setPersonal} />
             }
           />
           <Route
@@ -46,7 +36,6 @@ function App() {
               <ExperienceInfo
                 experience={experience}
                 setExperience={setExperience}
-                resetter={resetter}
               />
             }
           />
@@ -56,7 +45,6 @@ function App() {
               <EducationInfo
                 education={education}
                 setEducation={setEducation}
-                resetter={resetter}
               />
             }
           />
@@ -64,7 +52,7 @@ function App() {
       </Router>
 
       {/* {!Array.isArray(experience[0]) && */}
-      {/* <Output experience={experience} /> */}
+      <Output />
       {/* } */}
     </div>
   );

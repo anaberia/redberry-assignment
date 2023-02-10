@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import University from "../Reusables/University/University";
+
 import "./EducationInfo.css";
 
-function EducationInfo({ education, setEducation, resetter }) {
-  let [eduArray, setEduArray] = useState([1]);
+function EducationInfo({ education, setEducation }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
         {/* header with old styles is ok */}
         <div className="PersonalInfo-headerContainer">
           <Link style={{ textDecoration: "none" }} to="/">
-            <div className="PersonalInfo-backBtn" onClick={resetter}>
+            <div
+              className="PersonalInfo-backBtn"
+              onClick={() => localStorage.clear()}
+            >
               <div className="vector">{"<"}</div>
             </div>
           </Link>
@@ -21,19 +24,20 @@ function EducationInfo({ education, setEducation, resetter }) {
           </div>
         </div>
         {/* header with old styles is ok */}
-        {eduArray.map((item) => {
+        {education.map((item, index) => {
           return (
             <University
               education={education}
               setEducation={setEducation}
-              id={item - 1}
+              id={index}
+              item={item}
             />
           );
         })}
         {/* experience button */}
         <button
           className="Education-btn"
-          onClick={() => setEduArray([...eduArray, eduArray.length + 1])}
+          onClick={() => setEducation([...education, ""])}
         >
           სხვა სასწავლებლის დამატება
         </button>

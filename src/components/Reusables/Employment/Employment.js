@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import "./Employment.css";
 
-function Employment({ experience, setExperience, id }) {
+function Employment({ experience, setExperience, item, id }) {
   const { register, handleSubmit } = useForm();
 
   let addHandler = (data) => {
@@ -11,6 +11,7 @@ function Employment({ experience, setExperience, id }) {
       }
       return item;
     });
+
     setExperience(newArr);
   };
 
@@ -20,7 +21,7 @@ function Employment({ experience, setExperience, id }) {
       <div className="Email-container">
         <div className="Email-title">თანამდებობა</div>
         <input
-          value={experience[id].position}
+          value={item.position}
           placeholder="დეველოპერი, დიზაინერი, ა.შ."
           className="Email-input"
           {...register("position")}
@@ -34,7 +35,7 @@ function Employment({ experience, setExperience, id }) {
         <div className="Email-title">დამსაქმებელი</div>
 
         <input
-          value={experience[id].employer}
+          value={item.employer}
           className="Email-input"
           placeholder="დეველოპერი, დიზაინერი, ა.შ."
           {...register("employer")}
@@ -50,7 +51,7 @@ function Employment({ experience, setExperience, id }) {
             <div className="Name">დაწყების რიცხვი</div>
 
             <input
-              value={experience[id].startDate}
+              value={item.startDate}
               className="NameInput"
               placeholder="1111111"
               {...register("startDate")}
@@ -59,7 +60,7 @@ function Employment({ experience, setExperience, id }) {
           <div className="LastName-container">
             <div className="Name">დამთავრების რიცხვი</div>
             <input
-              value={experience[id].endDate}
+              value={item.endDate}
               className="NameInput"
               placeholder="111111"
               {...register("endDate")}
