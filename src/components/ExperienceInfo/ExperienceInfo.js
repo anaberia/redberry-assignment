@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Employment from "../Reusables/Employment/Employment";
 import "./ExperienceInfo.css";
 
-function ExperienceInfo({ info, setInfo, resetter }) {
+function ExperienceInfo({ experience, setExperience, resetter }) {
   let [expArray, setExpArray] = useState([1]);
 
   return (
@@ -26,9 +26,8 @@ function ExperienceInfo({ info, setInfo, resetter }) {
         {expArray.map((item) => {
           return (
             <Employment
-              item={item}
-              info={info}
-              setInfo={setInfo}
+              experience={experience}
+              setExperience={setExperience}
               id={item - 1}
             />
           );

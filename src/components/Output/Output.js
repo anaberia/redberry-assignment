@@ -1,11 +1,11 @@
 import React from "react";
 import "./Output.css";
 
-function Output({ info }) {
+function Output({ experience }) {
   return (
     <div className="Output">
       {/* personal */}
-      <div className="Output-personalInfo">
+      {/* <div className="Output-personalInfo">
         <div className="Output-left">
           <div className="Output-nameGroup">
             <div className="Output-name">{info.name}</div>
@@ -29,33 +29,33 @@ function Output({ info }) {
           <div className="Output-aboutMe">{info.aboutMe}</div>
         </div>
         {info.photo && <img className="Output-photo" src={info.photo} alt="" />}
-      </div>
+      </div> */}
       {/* Experience */}
       <div className="Output-experienceInfo">
-        {(info.position ||
-          info.employer ||
-          info.startDate ||
-          info.endDate ||
-          info.description) && (
+        {(experience.position ||
+          experience.employer ||
+          experience.startDate ||
+          experience.endDate ||
+          experience.description) && (
           <div className="Output-experience">{"ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ"}</div>
         )}
         <div className="Output-occupation">
-          {info.position && (
-            <div className="Output-position">{info.position},</div>
+          {experience.position && (
+            <div className="Output-position">{experience.position},</div>
           )}
-          <div className="Output-employer">{info.employer}</div>
+          <div className="Output-employer">{experience.employer}</div>
         </div>
         <div className="Output-dateGroup">
-          {info.startDate && (
-            <div className="Output-startDate">{info.startDate}-</div>
+          {experience.startDate && (
+            <div className="Output-startDate">{experience.startDate}-</div>
           )}
-          <div className="Output-endDate">{info.endDate}</div>
+          <div className="Output-endDate">{experience.endDate}</div>
         </div>
-        <div className="Output-description">{info.description}</div>
+        <div className="Output-description">{experience.description}</div>
       </div>
       {/* Experience */}
       {/* Education */}
-      {(info.eduDescription ||
+      {/* {(info.eduDescription ||
         info.university ||
         info.degree ||
         info.eduEndDate ||
@@ -73,7 +73,7 @@ function Output({ info }) {
             <div className="Output-description">{info.eduDescription}</div>
           </div>
         </div>
-      )}
+      )} */}
       {/* Education */}
       <div className="Output-logo">
         <img src="./images/logo3.png" alt="outputLogo" />

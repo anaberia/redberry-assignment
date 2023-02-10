@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./EducationInfo.css";
 
-function EducationInfo({ info, setInfo, resetter }) {
+function EducationInfo({ experience, setExperience, resetter }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
@@ -23,11 +23,13 @@ function EducationInfo({ info, setInfo, resetter }) {
         <div className="Email-container">
           <div className="Email-title">სასწავლებელი</div>
           <input
-            value={info.university}
+            value={experience.university}
             type="text"
             className="Email-input"
             placeholder="სასწავლებელი"
-            onChange={(e) => setInfo({ ...info, university: e.target.value })}
+            onChange={(e) =>
+              setExperience({ ...experience, university: e.target.value })
+            }
           />
           <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
         </div>
@@ -39,11 +41,13 @@ function EducationInfo({ info, setInfo, resetter }) {
             <div className="Name-container">
               <div className="Name">ხარისხი</div>
               <input
-                value={info.degree}
+                value={experience.degree}
                 type="text"
                 className="NameInput"
                 placeholder="აირჩიეთ ხარისხი"
-                onChange={(e) => setInfo({ ...info, degree: e.target.value })}
+                onChange={(e) =>
+                  setExperience({ ...experience, degree: e.target.value })
+                }
               />
             </div>
             <div className="LastName-container">
@@ -53,7 +57,7 @@ function EducationInfo({ info, setInfo, resetter }) {
                 className="NameInput"
                 placeholder="111111"
                 onChange={(e) =>
-                  setInfo({ ...info, eduEndDate: e.target.value })
+                  setExperience({ ...experience, eduEndDate: e.target.value })
                 }
               />
             </div>
@@ -64,12 +68,12 @@ function EducationInfo({ info, setInfo, resetter }) {
         <div>
           <div className="AboutMe-title">აღწერა</div>
           <textarea
-            value={info.eduDescription}
+            value={experience.eduDescription}
             type="text"
             className="Description-input"
             placeholder="განათლების აღწერა"
             onChange={(e) =>
-              setInfo({ ...info, eduDescription: e.target.value })
+              setExperience({ ...experience, eduDescription: e.target.value })
             }
           />
         </div>

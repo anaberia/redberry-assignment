@@ -2,25 +2,25 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import "./Employment.css";
 
-function Employment({ info, setInfo, id }) {
+function Employment({ experience, setExperience, id }) {
   const { register, handleSubmit } = useForm();
 
   let onSubmit = (data) => {
-    let x = info.map((item, index) => {
+    let newArr = experience.map((item, index) => {
       if (index === id) {
-        return (info[id] = data);
+        return (experience[id] = data);
       }
       return item;
     });
-    setInfo(x);
+    setExperience(newArr);
   };
 
-  console.log(info);
   return (
     <form onChange={handleSubmit(onSubmit)}>
       <div className="Email-container">
         <div className="Email-title">თანამდებობა</div>
         <input
+          value={experience[id].position}
           placeholder="დეველოპერი, დიზაინერი, ა.შ."
           className="Email-input"
           {...register("position")}
@@ -34,6 +34,7 @@ function Employment({ info, setInfo, id }) {
         <div className="Email-title">დამსაქმებელი</div>
 
         <input
+          value={experience[id].employer}
           className="Email-input"
           placeholder="დეველოპერი, დიზაინერი, ა.შ."
           {...register("employer")}
@@ -49,6 +50,7 @@ function Employment({ info, setInfo, id }) {
             <div className="Name">დაწყების რიცხვი</div>
 
             <input
+              value={experience[id].startDate}
               className="NameInput"
               placeholder="1111111"
               {...register("startDate")}
@@ -57,6 +59,7 @@ function Employment({ info, setInfo, id }) {
           <div className="LastName-container">
             <div className="Name">დამთავრების რიცხვი</div>
             <input
+              value={experience[id].endDate}
               className="NameInput"
               placeholder="111111"
               {...register("endDate")}
@@ -70,6 +73,7 @@ function Employment({ info, setInfo, id }) {
       <div>
         <div className="AboutMe-title">აღწერა</div>
         <textarea
+          value={experience[id].description}
           className="AboutMe-input"
           placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
           {...register("description")}

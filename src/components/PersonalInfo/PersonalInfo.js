@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import "./PersonalInfo.css";
 
-function PersonalInfo({ info, setInfo, resetter }) {
+function PersonalInfo({ experience, setExperience, resetter }) {
   let imgHandler = (e) => {
     let reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onload = () => {
-      setInfo({ ...info, photo: reader.result });
+      setExperience({ ...experience, photo: reader.result });
     };
   };
 
@@ -31,22 +31,26 @@ function PersonalInfo({ info, setInfo, resetter }) {
           <div className="Name-container">
             <div className="Name">სახელი</div>
             <input
-              value={info.name}
+              value={experience.name}
               type="text"
               className="NameInput"
               placeholder="ანზორ"
-              onChange={(e) => setInfo({ ...info, name: e.target.value })}
+              onChange={(e) =>
+                setExperience({ ...experience, name: e.target.value })
+              }
             />
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
           <div className="LastName-container">
             <div className="Name">გვარი</div>
             <input
-              value={info.lastName}
+              value={experience.lastName}
               type="text"
               className="NameInput"
               placeholder="მუმლაძე"
-              onChange={(e) => setInfo({ ...info, lastName: e.target.value })}
+              onChange={(e) =>
+                setExperience({ ...experience, lastName: e.target.value })
+              }
             />
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
@@ -71,11 +75,13 @@ function PersonalInfo({ info, setInfo, resetter }) {
         <div className="AboutMe-container">
           <div className="AboutMe-title">ჩემ შესახებ (არასავალდებულო)</div>
           <textarea
-            value={info.aboutMe}
+            value={experience.aboutMe}
             type="text"
             className="AboutMe-input"
             placeholder="ზოგადი ინფო შენს შესახებ"
-            onChange={(e) => setInfo({ ...info, aboutMe: e.target.value })}
+            onChange={(e) =>
+              setExperience({ ...experience, aboutMe: e.target.value })
+            }
           />
         </div>
         {/* about me */}
@@ -83,11 +89,13 @@ function PersonalInfo({ info, setInfo, resetter }) {
         <div className="Email-container">
           <div className="Email-title">ელ.ფოსტა</div>
           <input
-            value={info.email}
+            value={experience.email}
             type="text"
             className="Email-input"
             placeholder="anzor666@redberry.ge"
-            onChange={(e) => setInfo({ ...info, email: e.target.value })}
+            onChange={(e) =>
+              setExperience({ ...experience, email: e.target.value })
+            }
           />
           <div className="Email-valid">უნდა მთავრდებოდეს @redberry.ge-ით</div>
         </div>
@@ -96,11 +104,13 @@ function PersonalInfo({ info, setInfo, resetter }) {
         <div className="Email-container">
           <div className="Email-title">მობილურის ნომერი</div>
           <input
-            value={info.phone}
+            value={experience.phone}
             type="text"
             className="Email-input"
             placeholder="+995 551 12 34 56"
-            onChange={(e) => setInfo({ ...info, phone: e.target.value })}
+            onChange={(e) =>
+              setExperience({ ...experience, phone: e.target.value })
+            }
           />
           <div className="Email-valid">
             უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს
