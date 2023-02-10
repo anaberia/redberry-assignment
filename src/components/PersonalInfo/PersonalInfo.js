@@ -1,17 +1,23 @@
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./PersonalInfo.css";
 
-function PersonalInfo({ experience, setExperience, resetter }) {
+function PersonalInfo({ resetter, personal, setPersonal }) {
+  const { register, handleSubmit } = useForm();
   let imgHandler = (e) => {
     let reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onload = () => {
-      setExperience({ ...experience, photo: reader.result });
+      setPersonal({ ...personal, photo: reader.result });
     };
   };
 
+  let addHandler = (data) => {
+    setPersonal(data);
+  };
+
   return (
-    <div className="PersonalInfo">
+    <form onChange={handleSubmit(addHandler)} className="PersonalInfo">
       <div className="PersonalInfo-left">
         {/* header */}
         <div className="PersonalInfo-headerContainer">
@@ -31,26 +37,22 @@ function PersonalInfo({ experience, setExperience, resetter }) {
           <div className="Name-container">
             <div className="Name">სახელი</div>
             <input
-              value={experience.name}
+              value={personal.name}
               type="text"
               className="NameInput"
               placeholder="ანზორ"
-              onChange={(e) =>
-                setExperience({ ...experience, name: e.target.value })
-              }
+              {...register("name")}
             />
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
           <div className="LastName-container">
             <div className="Name">გვარი</div>
             <input
-              value={experience.lastName}
+              value={personal.lastName}
               type="text"
               className="NameInput"
               placeholder="მუმლაძე"
-              onChange={(e) =>
-                setExperience({ ...experience, lastName: e.target.value })
-              }
+              {...register("lastName")}
             />
             <div className="Name-valid">მინიმუმ 2 ასო, ქართული ასოები</div>
           </div>
@@ -75,13 +77,11 @@ function PersonalInfo({ experience, setExperience, resetter }) {
         <div className="AboutMe-container">
           <div className="AboutMe-title">ჩემ შესახებ (არასავალდებულო)</div>
           <textarea
-            value={experience.aboutMe}
+            value={personal.aboutMe}
             type="text"
             className="AboutMe-input"
             placeholder="ზოგადი ინფო შენს შესახებ"
-            onChange={(e) =>
-              setExperience({ ...experience, aboutMe: e.target.value })
-            }
+            {...register("aboutMe")}
           />
         </div>
         {/* about me */}
@@ -89,13 +89,11 @@ function PersonalInfo({ experience, setExperience, resetter }) {
         <div className="Email-container">
           <div className="Email-title">ელ.ფოსტა</div>
           <input
-            value={experience.email}
+            value={personal.email}
             type="text"
             className="Email-input"
             placeholder="anzor666@redberry.ge"
-            onChange={(e) =>
-              setExperience({ ...experience, email: e.target.value })
-            }
+            {...register("email")}
           />
           <div className="Email-valid">უნდა მთავრდებოდეს @redberry.ge-ით</div>
         </div>
@@ -104,13 +102,11 @@ function PersonalInfo({ experience, setExperience, resetter }) {
         <div className="Email-container">
           <div className="Email-title">მობილურის ნომერი</div>
           <input
-            value={experience.phone}
+            value={personal.phone}
             type="text"
             className="Email-input"
             placeholder="+995 551 12 34 56"
-            onChange={(e) =>
-              setExperience({ ...experience, phone: e.target.value })
-            }
+            {...register("phone")}
           />
           <div className="Email-valid">
             უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს
@@ -123,7 +119,7 @@ function PersonalInfo({ experience, setExperience, resetter }) {
         </Link>
         {/* button */}
       </div>
-    </div>
+    </form>
   );
 }
 

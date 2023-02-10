@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import University from "../Reusables/University/University";
 import "./EducationInfo.css";
 
-function EducationInfo({ experience, setExperience, resetter }) {
+function EducationInfo({ education, setEducation, resetter }) {
+  let [eduArray, setEduArray] = useState([1]);
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
@@ -19,67 +21,22 @@ function EducationInfo({ experience, setExperience, resetter }) {
           </div>
         </div>
         {/* header with old styles is ok */}
-        {/* Position */}
-        <div className="Email-container">
-          <div className="Email-title">სასწავლებელი</div>
-          <input
-            value={experience.university}
-            type="text"
-            className="Email-input"
-            placeholder="სასწავლებელი"
-            onChange={(e) =>
-              setExperience({ ...experience, university: e.target.value })
-            }
-          />
-          <div className="Email-valid">მინიმუმ 2 სიმბოლო</div>
-        </div>
-        {/* Position */}
-
-        {/* input */}
-        <div className="Input-containerWrapper">
-          <div className="Input-container">
-            <div className="Name-container">
-              <div className="Name">ხარისხი</div>
-              <input
-                value={experience.degree}
-                type="text"
-                className="NameInput"
-                placeholder="აირჩიეთ ხარისხი"
-                onChange={(e) =>
-                  setExperience({ ...experience, degree: e.target.value })
-                }
-              />
-            </div>
-            <div className="LastName-container">
-              <div className="Name">დამთავრების რიცხვი</div>
-              <input
-                type="text"
-                className="NameInput"
-                placeholder="111111"
-                onChange={(e) =>
-                  setExperience({ ...experience, eduEndDate: e.target.value })
-                }
-              />
-            </div>
-          </div>
-        </div>
-        {/* input */}
-        {/* about me */}
-        <div>
-          <div className="AboutMe-title">აღწერა</div>
-          <textarea
-            value={experience.eduDescription}
-            type="text"
-            className="Description-input"
-            placeholder="განათლების აღწერა"
-            onChange={(e) =>
-              setExperience({ ...experience, eduDescription: e.target.value })
-            }
-          />
-        </div>
-        {/* about me */}
+        {eduArray.map((item) => {
+          return (
+            <University
+              education={education}
+              setEducation={setEducation}
+              id={item - 1}
+            />
+          );
+        })}
         {/* experience button */}
-        <button className="Education-btn">სხვა სასწავლებლის დამატება</button>
+        <button
+          className="Education-btn"
+          onClick={() => setEduArray([...eduArray, eduArray.length + 1])}
+        >
+          სხვა სასწავლებლის დამატება
+        </button>
         {/* experience button */}
         <div className="Experience-lastBtnGroup">
           <Link to="/ExperienceInfo">

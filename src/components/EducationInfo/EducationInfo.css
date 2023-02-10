@@ -28,12 +28,13 @@
   display: flex;
   justify-content: space-between;
   margin-left: 150px;
-  margin-top: 168px;
+  margin-top: 200px;
+  padding-bottom: 65px;
   width: 797px;
 }
 
 .Education-btn {
-  margin-top: 90px;
+  margin-top: 45px;
   margin-left: 150px;
   width: 289px;
   height: 48px;

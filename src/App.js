@@ -9,16 +9,21 @@ import Output from "./components/Output/Output";
 import { getLocalStorage } from "./helpers/helpers";
 
 function App() {
+  let [personal, setPersonal] = useState(getLocalStorage("personal"));
   let [experience, setExperience] = useState(getLocalStorage("experience"));
+  let [education, setEducation] = useState(getLocalStorage("education"));
 
   let resetter = () => {
-    localStorage.removeItem("experience");
-    setExperience([]);
+    setPersonal([]);
+    setExperience(["", "", "", "", ""]);
+    setEducation(["", "", "", "", ""]);
   };
 
   useEffect(() => {
     localStorage.setItem("experience", JSON.stringify(experience));
-  }, [experience]);
+    localStorage.setItem("personal", JSON.stringify(personal));
+    localStorage.setItem("education", JSON.stringify(education));
+  }, [experience, personal, education]);
 
   return (
     <div className="App-container">
@@ -29,8 +34,8 @@ function App() {
             path="/PersonalInfo"
             element={
               <PersonalInfo
-                experience={experience}
-                setExperience={setExperience}
+                personal={personal}
+                setPersonal={setPersonal}
                 resetter={resetter}
               />
             }
@@ -49,8 +54,8 @@ function App() {
             path="/EducationInfo"
             element={
               <EducationInfo
-                experience={experience}
-                setExperience={setExperience}
+                education={education}
+                setEducation={setEducation}
                 resetter={resetter}
               />
             }
@@ -58,8 +63,9 @@ function App() {
         </Routes>
       </Router>
 
-      {/* output component */}
-      {!Array.isArray(experience) && <Output experience={experience} />}
+      {/* {!Array.isArray(experience[0]) && */}
+      {/* <Output experience={experience} /> */}
+      {/* } */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Output.css";
 
 function Output({ experience }) {
@@ -31,28 +31,28 @@ function Output({ experience }) {
         {info.photo && <img className="Output-photo" src={info.photo} alt="" />}
       </div> */}
       {/* Experience */}
-      <div className="Output-experienceInfo">
-        {(experience.position ||
-          experience.employer ||
-          experience.startDate ||
-          experience.endDate ||
-          experience.description) && (
+      {/* <div className="Output-experienceInfo">
+        {(experience[0].position ||
+          experience[0].employer ||
+          experience[0].startDate ||
+          experience[0].endDate ||
+          experience[0].description) && (
           <div className="Output-experience">{"ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ"}</div>
         )}
         <div className="Output-occupation">
-          {experience.position && (
-            <div className="Output-position">{experience.position},</div>
+          {experience[0].position && (
+            <div className="Output-position">{experience[0].position},</div>
           )}
-          <div className="Output-employer">{experience.employer}</div>
+          <div className="Output-employer">{experience[0].employer}</div>
         </div>
         <div className="Output-dateGroup">
-          {experience.startDate && (
-            <div className="Output-startDate">{experience.startDate}-</div>
+          {experience[0].startDate && (
+            <div className="Output-startDate">{experience[0].startDate}-</div>
           )}
-          <div className="Output-endDate">{experience.endDate}</div>
+          <div className="Output-endDate">{experience[0].endDate}</div>
         </div>
-        <div className="Output-description">{experience.description}</div>
-      </div>
+        <div className="Output-description">{experience[0].description}</div>
+      </div> */}
       {/* Experience */}
       {/* Education */}
       {/* {(info.eduDescription ||

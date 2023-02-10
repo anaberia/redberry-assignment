@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import "./Employment.css";
 
 function Employment({ experience, setExperience, id }) {
   const { register, handleSubmit } = useForm();
 
-  let onSubmit = (data) => {
+  let addHandler = (data) => {
     let newArr = experience.map((item, index) => {
       if (index === id) {
         return (experience[id] = data);
@@ -16,7 +15,8 @@ function Employment({ experience, setExperience, id }) {
   };
 
   return (
-    <form onChange={handleSubmit(onSubmit)}>
+    <form onChange={handleSubmit(addHandler)}>
+      {/* position */}
       <div className="Email-container">
         <div className="Email-title">თანამდებობა</div>
         <input
