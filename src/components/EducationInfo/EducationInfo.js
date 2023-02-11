@@ -4,17 +4,14 @@ import University from "../Reusables/University/University";
 
 import "./EducationInfo.css";
 
-function EducationInfo({ education, setEducation }) {
+function EducationInfo({ education, setEducation, resetter }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
         {/* header with old styles is ok */}
         <div className="PersonalInfo-headerContainer">
           <Link style={{ textDecoration: "none" }} to="/">
-            <div
-              className="PersonalInfo-backBtn"
-              onClick={() => localStorage.clear()}
-            >
+            <div className="PersonalInfo-backBtn" onClick={() => resetter()}>
               <div className="vector">{"<"}</div>
             </div>
           </Link>
@@ -24,6 +21,7 @@ function EducationInfo({ education, setEducation }) {
           </div>
         </div>
         {/* header with old styles is ok */}
+
         {education.map((item, index) => {
           return (
             <University

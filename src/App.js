@@ -19,6 +19,11 @@ function App() {
     localStorage.setItem("education", JSON.stringify(education));
   }, [experience, personal, education]);
 
+  let resetter = () => {
+    setPersonal([""]);
+    setExperience([""]);
+    setEducation([""]);
+  };
   return (
     <div className="App-container">
       <Router>
@@ -27,7 +32,11 @@ function App() {
           <Route
             path="/PersonalInfo"
             element={
-              <PersonalInfo personal={personal} setPersonal={setPersonal} />
+              <PersonalInfo
+                personal={personal}
+                setPersonal={setPersonal}
+                resetter={resetter}
+              />
             }
           />
           <Route
@@ -36,6 +45,7 @@ function App() {
               <ExperienceInfo
                 experience={experience}
                 setExperience={setExperience}
+                resetter={resetter}
               />
             }
           />
@@ -45,6 +55,7 @@ function App() {
               <EducationInfo
                 education={education}
                 setEducation={setEducation}
+                resetter={resetter}
               />
             }
           />
@@ -52,7 +63,11 @@ function App() {
       </Router>
 
       {/* {!Array.isArray(experience[0]) && */}
-      <Output />
+      <Output
+        personal={personal}
+        experience={experience}
+        education={education}
+      />
       {/* } */}
     </div>
   );

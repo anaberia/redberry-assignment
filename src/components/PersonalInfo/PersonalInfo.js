@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./PersonalInfo.css";
 
-function PersonalInfo({ personal, setPersonal }) {
+function PersonalInfo({ personal, setPersonal, resetter }) {
   const { register, handleSubmit } = useForm();
   let imgHandler = (e) => {
     let reader = new FileReader();
@@ -22,10 +22,7 @@ function PersonalInfo({ personal, setPersonal }) {
         {/* header */}
         <div className="PersonalInfo-headerContainer">
           <Link style={{ textDecoration: "none" }} to="/">
-            <div
-              onClick={() => localStorage.clear()}
-              className="PersonalInfo-backBtn"
-            >
+            <div onClick={() => resetter()} className="PersonalInfo-backBtn">
               <div className="vector">{"<"}</div>
             </div>
           </Link>

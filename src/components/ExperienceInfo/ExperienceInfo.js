@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getLocalStorage } from "../../helpers/helpers";
 import Employment from "../Reusables/Employment/Employment";
+
 import "./ExperienceInfo.css";
 
-function ExperienceInfo({ experience, setExperience }) {
+function ExperienceInfo({ experience, setExperience, resetter }) {
   return (
     <div className="ExperienceInfo">
       <div className="ExperienceInfo-left">
         {/* header with old styles is ok */}
         <div className="PersonalInfo-headerContainer">
           <Link style={{ textDecoration: "none" }} to="/">
-            <div className="PersonalInfo-backBtn" onClick={() => localStorage}>
+            <div className="PersonalInfo-backBtn" onClick={() => resetter()}>
               <div className="vector">{"<"}</div>
             </div>
           </Link>

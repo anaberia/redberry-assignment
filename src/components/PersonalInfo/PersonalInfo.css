@@ -204,3 +204,7 @@
   color: #ffffff;
   cursor: pointer;
 }
+
+.link {
+  border: 2px solid red;
+}
